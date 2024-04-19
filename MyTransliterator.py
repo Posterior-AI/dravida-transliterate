@@ -47,5 +47,7 @@ class Transliterator:
         for key in self.sorted_keys:
             if key in text:
                 text = text.replace(key, self.dict_of_letters[key])
+        if lang == "Malayalam":
+            text = text.replace("ൽ", "l").replace("ർ", "ṟ").replace("ൾ", "ḷ").replace("ൺ", "ṇ").replace("ൻ", "n")
         return text
 

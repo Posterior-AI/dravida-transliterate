@@ -16,6 +16,7 @@ def detransliterate(all_data, lang):
 
     detransliterated = []
     for each_data in all_data:
+        each_data = each_data.replace("ṟ", "ṟ").replace("ṉ", "ṉ")
         detransliterated.append(detransliterator.detransliterate(each_data))
 
     return detransliterated

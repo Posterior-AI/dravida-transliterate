@@ -44,8 +44,9 @@ print(re_text)
 # ప్రియాంక విప్పారిత నేత్రాలతో త్రినాధ్ కేసే మౌనంగా చూస్తుండి పోయింది.
 ```
 
-## Known issues
-1. The latin2malayalam has some issues with "ൺ", "aി", "aൌ", etc. Currently, the correct_data.py is used to correct such mistakes.
+## ~~Known issues~~
+~~1. The latin2malayalam has some issues with "ൺ", "aി", "aൌ", etc. Currently, the correct_data.py is used to correct such mistakes.~~
+All known issues have been fixed. We encourage the community to report more issues.
 
 ## License
 
