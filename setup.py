@@ -7,7 +7,7 @@ setup(
     version=__version__,
 
     url='https://github.com/Posterior-AI/dravida-transliterate',
-    author='PosteriorAI',
+    author='posteriorai',
     author_email='jas@posterior.xyz',
     description="Transliterate to and from Indian languages. Currently supported Dravida languages.",
 
