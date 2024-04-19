@@ -31,22 +31,24 @@ Tools to transliterate from and detransliterate to Dravida languages (Kannada, M
 ## quick start
 
 ```python
-from MyTransliterator import Transliterator
-from DeTransliterator import DeTransliterator
+from translit.Transliterator import Transliterator
+from translit.DeTransliterator import DeTransliterator
 transliterator = Transliterator("Telugu")
 text = u'ప్రియాంక విప్పారిత నేత్రాలతో త్రినాధ్ కేసే మౌనంగా చూస్తుండి పోయింది.'
 trans_text = transliterator.transliterate(text)
 print(trans_text)
 # priyāṁka vippārita nētrālatō trinādh kēsē maunaṁgā cūstuṁḍi pōyiṁdi.
-detransliterator = Detransliterator("Telugu")
+detransliterator = DeTransliterator("Telugu")
 re_text = detransliterator.detransliterate(trans_text)
 print(re_text)
 # ప్రియాంక విప్పారిత నేత్రాలతో త్రినాధ్ కేసే మౌనంగా చూస్తుండి పోయింది.
 ```
 
-## ~~Known issues~~
-~~1. The latin2malayalam has some issues with "ൺ", "aി", "aൌ", etc. Currently, the correct_data.py is used to correct such mistakes.~~
-All known issues have been fixed. We encourage the community to report more issues.
+## Known issues
+1. The (de)transliterations output for Malayalam are not one-to-one due to different representations for same sound.
+    Ex: ൿ and ക്, ർ and റ്, ൻ and ന്.
+    We seek feedback for the correctness of the current state, and what needs to be done to make them correct.
+No known issues for remaining languages. We encourage the community to report more issues.
 
 ## License
 

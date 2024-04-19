@@ -1,9 +1,9 @@
-from latin2telugu import lang as telugu, latinized as telugu_latinized
-from latin2tamil import lang as tamil, latinized as tamil_latinized
-from latin2kannada import lang as kannada, latinized as kannada_latinized
-from latin2malayalam import lang as malayalam, latinized as malayalam_latinized
+from translit.latin2telugu import lang as telugu, latinized as telugu_latinized
+from translit.latin2tamil import lang as tamil, latinized as tamil_latinized
+from translit.latin2kannada import lang as kannada, latinized as kannada_latinized
+from translit.latin2malayalam import lang as malayalam, latinized as malayalam_latinized
 
-class DeTransliterator:
+class Transliterator:
     def __init__(self, lang=None):
         self.transliterated_text = ""
         self.lang = lang
@@ -28,12 +28,12 @@ class DeTransliterator:
 
         self.dict_of_letters = {}
         for j in range(len(lang_txt)):
-            self.dict_of_letters[lang_latinized[j]] = lang_txt[j]
+            self.dict_of_letters[lang_txt[j]] = lang_latinized[j]
 
         self.sorted_keys = sorted(self.dict_of_letters.keys(), key=len, reverse=True)
     
-    def detransliterate(self, text, lang=None):
-        """DeTransliterate Dravida unicode strings from Latin characters as per ISO 15919.
+    def transliterate(self, text, lang=None):
+        """Transliterate Dravida unicode strings from Latin characters as per ISO 15919.
 
         Args:
             text (string): Original text in Dravida unicode.
@@ -47,5 +47,7 @@ class DeTransliterator:
         for key in self.sorted_keys:
             if key in text:
                 text = text.replace(key, self.dict_of_letters[key])
+        if lang == "Malayalam":
+            text = text.replace("ൽ", "l").replace("ർ", "ṟ").replace("ൾ", "ḷ").replace("ൺ", "ṇ").replace("ൻ", "n")
         return text
 

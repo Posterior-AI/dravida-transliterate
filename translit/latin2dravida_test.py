@@ -2,8 +2,8 @@
 # import sys
 # sys.path.append('..')
 
-from MyTransliterator import Transliterator
-from DeTransliterator import DeTransliterator
+from translit.Transliterator import Transliterator
+from translit.DeTransliterator import DeTransliterator
 
 lang_texts = [
     {
